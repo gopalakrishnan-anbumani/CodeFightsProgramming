@@ -4,10 +4,10 @@ public class KMPalgorithm {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		patternSearching("AAABAAA".toCharArray(),"ggg".toCharArray());
+		patternSearching("AAABAAA".toCharArray(),"AAABAACAAABAAA".toCharArray());
 	}
 
-	public static void patternSearching(char[] pat,char[] text){
+	public static int patternSearching(char[] pat,char[] text){
 		
 		int patLen = pat.length;
 		int[] lps = new int[pat.length];
@@ -36,7 +36,29 @@ public class KMPalgorithm {
 		}
 		
 		
-		printIntArr(lps);
+		int a=0;
+		int b=0;
+		int N = text.length;
+		while(a<N){
+			
+			if(text[a]==pat[b]){
+				a++;
+				b++;
+			}
+			if(b==patLen){
+			   return a-b;
+			
+			}
+			if(a<N && text[a]!=pat[b]){
+				
+				if(b != 0){
+					b = lps[b-1];
+				}else{
+					a+=1;
+				}
+			}
+		}
+		return -1;
 	}
 	
 	public static void printIntArr(int[] arr){
