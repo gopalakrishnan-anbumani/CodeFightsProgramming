@@ -49,7 +49,7 @@ public class KMPalgorithm {
 			   return a-b;
 			
 			}
-			if(a<N && text[a]!=pat[b]){
+			else if(a<N && text[a]!=pat[b]){
 				
 				if(b != 0){
 					b = lps[b-1];
