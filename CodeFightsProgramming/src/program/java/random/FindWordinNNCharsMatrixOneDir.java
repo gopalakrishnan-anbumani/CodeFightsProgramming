@@ -16,7 +16,7 @@ public class FindWordinNNCharsMatrixOneDir {
 	public static void main(String[] args) {
 		
 
-
+		
 		char[][] M = { 
 				     { 'a', 'b', 'n', 'd', 'e' }, 
 				     { 'd', 'f', 'u', 'g', 'n' }, 
@@ -26,7 +26,9 @@ public class FindWordinNNCharsMatrixOneDir {
 
 		String input = "abn";
 
-		findWord(M, input);
+		//findWord(M, input);
+		
+		System.out.println("gopal".substring(0, 0));
 
 	}
 
